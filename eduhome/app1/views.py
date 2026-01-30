@@ -67,7 +67,7 @@ def userlogin(request):
         user = authenticate(username=username, password=password)
         if user is not None:
             login(request, user)
-            return redirect('/', username12=username )  # Redirect to home page after successful login
+            return redirect('/blog/' )  # Redirect to home page after successful login
         else:
             return HttpResponse("Invalid credentials. Please try again.")
     return render(request, 'userlogin.html')
